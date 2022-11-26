@@ -91,6 +91,9 @@ func (r *RemoteWrite) xclient(c goja.ConstructorCall) *goja.Object {
 	if config.Timeout == "" {
 		config.Timeout = "10s"
 	}
+        if config.TenantName == "" {
+		config.TenantName = "archlab"
+	}
 
 	return rt.ToValue(&Client{
 		client: &http.Client{},
